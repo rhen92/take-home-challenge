@@ -9,7 +9,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      articles: []
+      articles: [],
+      filteredArticles: [],
+      message: null
     }
   }
 
@@ -33,15 +35,34 @@ class App extends Component {
       })
   }
 
+  filterArticles = (value) => {
+    const searchArticles = this.state.articles.filter(article => {
+      return article.subsection.toLowerCase().includes(value.toLowerCase())
+    })
+    this.setState({filteredArticles: searchArticles}, () => this.showMessage(value))
+  }
+
+  // showMessage = (value) => {
+  //   if (!this.state.filteredArticles.length && value) {
+  //     this.setState({message: 'No matches found'})
+  //   } else {
+  //     this.setState({message: 'Here are your matches'})
+  //   }
+  //   if (!value) {
+  //     this.setState({message: ''})
+  //   }
+  // }
+
   render() {
     return (
       <main>
         <Switch>
           <Route exact path="/" render={() => {
+            const whichArticles = this.state.filteredArticles.length ? this.state.filteredArticles : this.state.articles;
             return (
               <React.Fragment>
-                <Header />
-                <Articles articles={this.state.articles} />
+                <Header filterArticles={this.filterArticles} message={this.state.message} />
+                <Articles articles={whichArticles} />
               </React.Fragment>
             )
           }} />
