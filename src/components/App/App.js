@@ -42,16 +42,16 @@ class App extends Component {
     this.setState({filteredArticles: searchArticles}, () => this.showMessage(value))
   }
 
-  // showMessage = (value) => {
-  //   if (!this.state.filteredArticles.length && value) {
-  //     this.setState({message: 'No matches found'})
-  //   } else {
-  //     this.setState({message: 'Here are your matches'})
-  //   }
-  //   if (!value) {
-  //     this.setState({message: ''})
-  //   }
-  // }
+  showMessage = (value) => {
+    if (!this.state.filteredArticles.length && value) {
+      this.setState({message: 'No matches found'})
+    } else {
+      this.setState({message: 'Here are your matches'})
+    }
+    if (!value) {
+      this.setState({message: ''})
+    }
+  }
 
   render() {
     return (
