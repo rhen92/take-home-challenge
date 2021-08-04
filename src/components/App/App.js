@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -12,7 +13,13 @@ class App extends Component {
   render() {
     return (
       <main>
-        <h1>Hello</h1>
+        <Switch>
+          <Route exact path="/" render={() => {
+            return (
+              <h1>Hello</h1>
+            )
+          }} />
+        </Switch>
       </main>
     )
   }
