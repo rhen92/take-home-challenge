@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { getArticles } from '../../api-calls';
+import Articles from '../Articles/Articles';
 import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
@@ -22,7 +23,7 @@ class App extends Component {
             'url': result.url,
             'byline': result.byline,
             'published_date': result.published_date,
-            'image': result.multimedia[1]
+            'image': result.multimedia
           }
           obj.push(articleInfo)
           return obj
@@ -37,7 +38,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" render={() => {
             return (
-              <h1>Hello</h1>
+              <Articles articles={this.state.articles} />
             )
           }} />
         </Switch>
