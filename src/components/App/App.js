@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { getArticles } from '../../api-calls';
 import Articles from '../Articles/Articles';
+import Header from '../Header/Header';
 import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
@@ -38,7 +39,10 @@ class App extends Component {
         <Switch>
           <Route exact path="/" render={() => {
             return (
-              <Articles articles={this.state.articles} />
+              <React.Fragment>
+                <Header />
+                <Articles articles={this.state.articles} />
+              </React.Fragment>
             )
           }} />
         </Switch>
