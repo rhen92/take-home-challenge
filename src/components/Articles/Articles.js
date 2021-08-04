@@ -10,12 +10,13 @@ const Articles = ({ articles }) => {
       key={id++}
       title={article.title}
       image={article.image}
+      continent={article.subsection}
       />
     )
   })
 
   return (
-    <section>
+    <section className='news-container'>
       {newsArticles}
     </section>
   )
