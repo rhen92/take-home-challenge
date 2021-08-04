@@ -62,7 +62,7 @@ class App extends Component {
             return (
               <React.Fragment>
                 <Header filterArticles={this.filterArticles} message={this.state.message} />
-                <Articles articles={whichArticles} />
+                <Articles articles={whichArticles} message={this.state.message} />
               </React.Fragment>
             )
           }} />

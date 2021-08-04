@@ -2,7 +2,7 @@ import React from 'react';
 import './Articles.css';
 import ArticleCard from '../ArticleCard/ArticleCard';
 
-const Articles = ({ articles }) => {
+const Articles = ({ articles, message }) => {
   let id = 1;
   const newsArticles = articles.map(article => {
     return (
@@ -13,10 +13,11 @@ const Articles = ({ articles }) => {
       continent={article.subsection}
       />
     )
-  })
+  });
+  const whichClassName = message === 'No matches found' ? 'nothing' : 'news-container';
 
   return (
-    <section className='news-container'>
+    <section className={whichClassName}>
       {newsArticles}
     </section>
   )
