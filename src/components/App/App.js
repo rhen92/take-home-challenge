@@ -74,7 +74,6 @@ class App extends Component {
           }} />
           <Route exact path="/:title" render={({match}) => {
             const { title } = match.params;
-            console.log(title)
             return <Spotlight title={title} findSelectedArticle={this.findSelectedArticle} />
           }} />
         </Switch>
