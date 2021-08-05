@@ -12,3 +12,13 @@
 .article-wanted {
   text-align: center;
 }
+
+@media screen and (max-width: 425px) {
+  .spotlight-image {
+    width: 70vw;
+  }
+
+  .back-button {
+    font-size: 30px
+  }
+}
