@@ -3,6 +3,7 @@ import './App.css';
 import { getArticles } from '../../api-calls';
 import Articles from '../Articles/Articles';
 import Header from '../Header/Header';
+import Spotlight from '../Spotlight/Spotlight';
 import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
@@ -53,6 +54,11 @@ class App extends Component {
     }
   }
 
+  findSelectedArticle = (title) => {
+    const article = this.state.articles.find(article => article.title === title);
+    return article
+  }
+
   render() {
     return (
       <main>
@@ -65,6 +71,11 @@ class App extends Component {
                 <Articles articles={whichArticles} message={this.state.message} />
               </React.Fragment>
             )
+          }} />
+          <Route exact path="/:title" render={({match}) => {
+            const { title } = match.params;
+            console.log(title)
+            return <Spotlight title={title} findSelectedArticle={this.findSelectedArticle} />
           }} />
         </Switch>
       </main>
