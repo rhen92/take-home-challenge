@@ -15,3 +15,27 @@
   text-decoration: none;
   color: #000000;
 }
+
+@media screen and (max-width: 1024px) {
+  .news-container {
+    grid-gap: 3rem;
+    grid-template-columns: repeat(3, .2fr);
+    margin-left: 7vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .news-container {
+    grid-gap: 3rem;
+    grid-template-columns: repeat(2, .2fr);
+    margin-left: 5vw;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .news-container {
+    grid-gap: 3rem;
+    grid-template-columns: repeat(1, .2fr);
+    margin-left: 7vw;
+  }
+}

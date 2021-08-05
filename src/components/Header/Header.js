@@ -18,7 +18,7 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <h1>World News Insider</h1>
+        <h1 className='logo'>World News Insider</h1>
         <input
         type='text'
         placeholder='Search by Continent'
