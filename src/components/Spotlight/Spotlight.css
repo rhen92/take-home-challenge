@@ -5,5 +5,10 @@
 
 .back-button {
   font-size: 35px;
-  text-decoration: none
+  text-decoration: none;
+  margin: 10px
+}
+
+.article-wanted {
+  text-align: center;
 }
